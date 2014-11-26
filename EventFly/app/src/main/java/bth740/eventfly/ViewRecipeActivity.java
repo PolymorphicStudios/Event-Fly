@@ -1,16 +1,18 @@
 package bth740.eventfly;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class ViewRecipeActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,40 +40,40 @@ public class MainActivity extends Activity {
             })
         );
 
-        actionBar.addTab(actionBar.newTab().setText("History").setTabListener(new ActionBar.TabListener() {
-                    @Override
-                    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                        Toast.makeText(getBaseContext(), "HISTORY Clicked", Toast.LENGTH_LONG).show();
-                    }
+        actionBar.addTab(actionBar.newTab().setText("Near Me").setTabListener(new ActionBar.TabListener() {
+                @Override
+                public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+                    Toast.makeText(getBaseContext(), "NEARME Clicked", Toast.LENGTH_LONG).show();
+                }
 
-                    @Override
-                    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                @Override
+                public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                    }
+                }
 
-                    @Override
-                    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                @Override
+                public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                    }
-                })
+                }
+            })
         );
 
-        actionBar.addTab(actionBar.newTab().setText("Near Me").setTabListener(new ActionBar.TabListener() {
-                    @Override
-                    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                        Toast.makeText(getBaseContext(), "NEARME Clicked", Toast.LENGTH_LONG).show();
-                    }
+        actionBar.addTab(actionBar.newTab().setText("History").setTabListener(new ActionBar.TabListener() {
+                @Override
+                public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+                    Toast.makeText(getBaseContext(), "HISTORY Clicked", Toast.LENGTH_LONG).show();
+                }
 
-                    @Override
-                    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                @Override
+                public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                    }
+                }
 
-                    @Override
-                    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                @Override
+                public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                    }
-                })
+                }
+            })
         );
     }
 
