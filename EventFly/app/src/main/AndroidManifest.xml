@@ -18,7 +18,13 @@
         </activity>
         <activity
             android:name="bth740.eventfly.Create.EnterFieldsActivity"
-            android:label="@string/title_activity_enter_fields" >
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_enter_fields"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="bth740.eventfly.Create.SelectImageActivity"
+            android:label="@string/title_activity_select_image" >
         </activity>
     </application>
 

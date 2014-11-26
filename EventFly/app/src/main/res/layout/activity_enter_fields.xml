@@ -44,7 +44,7 @@
         android:id="@+id/ec_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ec_title_field_et"
+        android:layout_alignBottom="@+id/ec_title_field_et"
         android:text="Title * "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -53,9 +53,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_required_fields_title_tv"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginTop="15dp"
-        android:hint="Title here"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <!-- Event Location -->
@@ -63,7 +65,7 @@
         android:id="@+id/ec_location_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ec_location_field_et"
+        android:layout_alignBottom="@+id/ec_location_field_et"
         android:text="Location * "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -72,9 +74,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_title_field_et"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginTop="5dp"
-        android:hint="Location here"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <!-- Event Tags -->
@@ -82,7 +86,7 @@
         android:id="@+id/ec_tags_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ec_tags_field_et"
+        android:layout_alignBottom="@+id/ec_tags_field_et"
         android:text="Tags "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -91,9 +95,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_location_field_et"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginTop="5dp"
-        android:hint="Tags here"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <!-- Event Date -->
@@ -101,7 +107,7 @@
         android:id="@+id/ec_date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ec_date_field_et"
+        android:layout_alignBottom="@+id/ec_date_field_et"
         android:text="Date * "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -110,21 +116,22 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_tags_field_et"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginTop="5dp"
         android:focusable="false"
-        android:hint="Date here"
+        android:onClick="onDateFieldClicked"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
         android:id="@+id/ec_date_field_tv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ec_date_field_et"
+        android:layout_alignTop="@+id/ec_date_field_et"
         android:layout_marginTop="7dp"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginLeft="12dp"
-        android:hint="Date here"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:onClick="onDateFieldClicked"/>
 
@@ -133,7 +140,7 @@
         android:id="@+id/ec_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ec_time_field_et"
+        android:layout_alignBottom="@+id/ec_time_field_et"
         android:text="Time * "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -142,21 +149,22 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_date_field_tv"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginTop="10dp"
         android:focusable="false"
-        android:hint="Time here"
+        android:onClick="onTimeFieldClicked"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
         android:id="@+id/ec_time_field_tv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ec_time_field_et"
+        android:layout_alignTop="@+id/ec_time_field_et"
         android:layout_marginTop="7dp"
-        android:layout_toRightOf="@id/ec_location_tv"
+        android:layout_toRightOf="@+id/ec_location_tv"
         android:layout_marginLeft="12dp"
-        android:hint="Time here"
+        android:hint=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:onClick="onTimeFieldClicked"/>
 

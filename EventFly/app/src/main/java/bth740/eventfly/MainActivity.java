@@ -1,17 +1,25 @@
 package bth740.eventfly;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import bth740.eventfly.Create.EnterFieldsActivity;
 
 
 public class MainActivity extends Activity {
+    protected Context THIS = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        THIS = this;
     }
 
 
@@ -35,5 +43,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onCreateClicked(View v) {
+        Intent intent = new Intent(THIS,EnterFieldsActivity.class);
+        startActivity(intent);
     }
 }
