@@ -78,9 +78,12 @@ public class SelectImageActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onPreviousActivityClicked(View v){
+        finish();
+    }
+
     public void onNextActivityClicked(View v) {
-        //Add validation for time+date?
-        //Store values?
+        //Store image name?
         Intent intent = new Intent(THIS,SelectImageActivity.class);
         startActivity(intent);
     }
