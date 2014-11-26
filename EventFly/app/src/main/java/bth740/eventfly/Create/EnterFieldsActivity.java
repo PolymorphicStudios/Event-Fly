@@ -48,6 +48,6 @@ public class EnterFieldsActivity extends Activity {
     }
 
     public void onNextActivityClicked(View v) {
-        
+
     }
 }
