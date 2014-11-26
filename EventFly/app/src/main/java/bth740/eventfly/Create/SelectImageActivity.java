@@ -23,7 +23,8 @@ public class SelectImageActivity extends Activity {
     protected Context THIS = null;
     ImageView image;
     GridView imageGrid;
-    int currentImage = -1;
+    View oldImageView;
+    int currentImage = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +38,20 @@ public class SelectImageActivity extends Activity {
         imageGrid = (GridView) findViewById(R.id.ec_image_grid_gv);
         imageGrid.setAdapter(new ImageAdapter(this));
 
-        /*imageGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        imageGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Toast.makeText(THIS, "image: " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(THIS, "image: " + position, Toast.LENGTH_SHORT).show();
+                if (v != oldImageView) {
+                    if (oldImageView != null){
+                        oldImageView.setBackgroundColor(0xFFFFFFFF);
+                        oldImageView.invalidate();
+                    }
+                    v.setBackgroundColor(0x6633B5E5);
+                    v.invalidate();
+                }
+                oldImageView = v;
             }
-        });*/
+        });
 
     }
 
@@ -66,10 +76,6 @@ public class SelectImageActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onImageSelectorClicked(View v) {
-
     }
 
     public void onNextActivityClicked(View v) {
@@ -113,6 +119,7 @@ public class SelectImageActivity extends Activity {
             }
 
             imageView.setImageResource(mThumbIds[position]);
+            image = imageView;
             return imageView;
         }
 
