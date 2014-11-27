@@ -10,8 +10,153 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp">
 
+        <TextView
+            android:text="BASKETBALL @ 7 (PUBLIC)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_title_tv"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/basketball"
+            android:layout_below="@+id/event_title_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:entries="@array/status_arrays"
+            android:prompt="@string/status_option_prompt"
+            android:gravity="fill_horizontal"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Reminder"
+            android:id="@+id/reminder_btn"
+            android:layout_below="@+id/spinner"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Host"
+            android:id="@+id/contact_btn"
+            android:layout_below="@+id/spinner"
+            android:layout_alignRight="@id/reminder_btn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "
+            android:id="@+id/date_tv"
+            android:layout_below="@+id/reminder_btn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/desc_tv"
+            android:layout_alignEnd="@+id/desc_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: "
+            android:id="@+id/time_tv"
+            android:layout_below="@+id/date_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/date_tv"
+            android:layout_alignEnd="@+id/date_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location: "
+            android:id="@+id/location_tv"
+            android:layout_below="@+id/time_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/time_tv"
+            android:layout_alignEnd="@+id/time_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cost: "
+            android:id="@+id/cost_tv"
+            android:layout_below="@+id/location_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/location_tv"
+            android:layout_alignEnd="@+id/location_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:id="@+id/desc_tv"
+            android:layout_below="@+id/cost_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="November 5th, 2014"
+            android:id="@+id/date_detail_tv"
+            android:layout_below="@+id/reminder_btn"
+            android:layout_toRightOf="@+id/date_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7:00 PM"
+            android:id="@+id/time_detail_tv"
+            android:layout_above="@+id/location_tv"
+            android:layout_toRightOf="@+id/time_tv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Christie Pits"
+            android:id="@+id/location_detail_tv"
+            android:layout_below="@id/time_detail_tv"
+            android:layout_toRightOf="@+id/location_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FREE"
+            android:id="@+id/cost_detail_tv"
+            android:layout_below="@id/location_detail_tv"
+            android:layout_toRightOf="@+id/cost_tv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filler_text"
+            android:id="@+id/desc_detail_tv"
+            android:layout_below="@id/cost_detail_tv"
+            android:layout_toRightOf="@+id/desc_tv"/>
 
 
     </RelativeLayout>

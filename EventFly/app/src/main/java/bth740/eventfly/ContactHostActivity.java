@@ -3,11 +3,7 @@ package bth740.eventfly;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -19,16 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class ViewRecipeActivity extends Activity {
+public class ContactHostActivity extends Activity {
     Button logoutBtn;
     TextView actionTitleText;
-    Button reminderBtn, contactBtn;
-    final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_recipe);
+        setContentView(R.layout.activity_contact_host);
 
         ActionBar actionBar = getActionBar();
         actionBar.setCustomView(R.layout.action_buttons);
@@ -105,26 +99,6 @@ public class ViewRecipeActivity extends Activity {
         });
 
         //end of actionbar stuff
-        reminderBtn = (Button) findViewById(R.id.reminder_btn);
-        reminderBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Reminder added to Calendar", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        contactBtn = (Button) findViewById(R.id.contact_btn);
-        contactBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getBaseContext(), "Contact Clicked", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(context, ContactHostActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     @Override
