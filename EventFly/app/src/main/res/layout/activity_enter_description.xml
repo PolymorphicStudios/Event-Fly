@@ -39,7 +39,9 @@ when coming to your event."
         android:layout_below="@+id/ec_desc_info_title_tv"
         android:layout_above="@+id/ec_desc_footer_v"
         android:gravity="top"
-        android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae justo libero. Quisque eleifend velit vitae nisl finibus elementum et eu nisi. Etiam viverra quam et risus sodales, sit amet elementum ex efficitur. Mauris sodales a tortor ut consectetur. Proin dictum arcu eu nisi accumsan, consectetur fringilla ipsum pharetra. Ut luctus turpis id turpis eleifend pulvinar. Mauris ultricies magna quis finibus maximus. Donec ut tellus ligula. Curabitur id dolor dictum, finibus ligula a, congue velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac ante fermentum augue dignissim tristique a sit amet tortor. Sed vel magna vehicula, auctor ipsum nec, blandit turpis. Duis luctus semper accumsan. "/>
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:hint="Enter description here"/>
 
     <!-- Footer -->
     <View

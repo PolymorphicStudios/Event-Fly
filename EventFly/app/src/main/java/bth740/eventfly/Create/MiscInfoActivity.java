@@ -14,10 +14,13 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.NumberPicker;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -28,6 +31,9 @@ public class MiscInfoActivity extends Activity {
     protected static Context THIS = null;
     static ListView items_lv;
     NumberPicker np;
+    CheckBox cb;
+    TextView difficulty,novice,expert;
+    SeekBar sb;
     static ArrayAdapter<String> adapter;
 
     static ArrayList<String> items;
@@ -40,6 +46,11 @@ public class MiscInfoActivity extends Activity {
         THIS = this;
 
         np = (NumberPicker) findViewById(R.id.ec_max_guests_np);
+        cb = (CheckBox) findViewById(R.id.ec_difficulty_show_cb);
+        difficulty = (TextView) findViewById(R.id.ec_difficulty_title_tv);
+        novice = (TextView) findViewById(R.id.ec_difficulty_novice_tv);
+        expert = (TextView) findViewById(R.id.ec_difficulty_expert_tv);
+        sb = (SeekBar) findViewById(R.id.ec_difficulty_bar_sb);
         items_lv = (ListView) findViewById(R.id.ec_items_lv);
 
         np.setMinValue(1);
@@ -97,6 +108,20 @@ public class MiscInfoActivity extends Activity {
     public void onAddItemClicked(View v) {
         DialogFragment newFragment = new ItemDialogFragment();
         newFragment.show(getFragmentManager(), "addItem");
+    }
+
+    public void onDifficultyShowClicked(View v) {
+        if (cb.isChecked()) {
+            novice.setEnabled(true);
+            expert.setEnabled(true);
+            sb.setEnabled(true);
+        }
+        else {
+            novice.setEnabled(false);
+            expert.setEnabled(false);
+            sb.setEnabled(false);
+        }
+
     }
 
     public void onPreviousActivityClicked(View v) {

@@ -114,7 +114,7 @@ public class SelectImageActivity extends Activity {
             ImageView imageView;
             if (convertView == null) {  // if it's not recycled, initialize some attributes
                 imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.MATCH_PARENT, GridView.LayoutParams.MATCH_PARENT));
+                imageView.setLayoutParams(new GridView.LayoutParams(300,300));
                 imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 imageView.setPadding(8, 8, 8, 8);
             } else {
