@@ -105,7 +105,7 @@ public class MiscInfoActivity extends Activity {
 
     public void onNextActivityClicked(View v) {
         //Store image name?
-        Intent intent = new Intent(THIS, MiscInfoActivity.class);
+        Intent intent = new Intent(THIS, EnterDescriptionActivity.class);
         startActivity(intent);
     }
 

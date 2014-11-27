@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="bth740.eventfly.Create.EnterDescriptionActivity">
+
+    <!-- EVENT CREATION STEP 4/4 TITLE -->
+    <TextView
+        android:id="@+id/ec_step4_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENT CREATION - STEP 4/4"
+        android:textColor="#666666"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ec_step4_title_tv"
+        android:background="#666666" />
+
+    <!-- Begin Enter Description -->
+    <TextView
+        android:id="@+id/ec_desc_info_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_step4_title_tv"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:text="Please add a description. This will tell potential guests what to expect
+when coming to your event."
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText
+        android:id="@+id/ec_desc_field_et"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ec_desc_info_title_tv"
+        android:layout_above="@+id/ec_desc_footer_v"
+        android:gravity="top"
+        android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae justo libero. Quisque eleifend velit vitae nisl finibus elementum et eu nisi. Etiam viverra quam et risus sodales, sit amet elementum ex efficitur. Mauris sodales a tortor ut consectetur. Proin dictum arcu eu nisi accumsan, consectetur fringilla ipsum pharetra. Ut luctus turpis id turpis eleifend pulvinar. Mauris ultricies magna quis finibus maximus. Donec ut tellus ligula. Curabitur id dolor dictum, finibus ligula a, congue velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac ante fermentum augue dignissim tristique a sit amet tortor. Sed vel magna vehicula, auctor ipsum nec, blandit turpis. Duis luctus semper accumsan. "/>
+
+    <!-- Footer -->
+    <View
+        android:id="@+id/ec_desc_footer_v"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="#666666" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/back"
+        android:onClick="onPreviousActivityClicked"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="Create"
+        android:onClick="onCreateEventClicked"/>
+
+</RelativeLayout>
