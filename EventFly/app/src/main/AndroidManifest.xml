@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name="bth740.eventfly.ViewRecipeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -40,6 +41,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewRecipeActivity" />
+=======
+            android:name="bth740.eventfly.eventflyLogin"
+            android:label="@string/title_activity_eventfly_login" >
+>>>>>>> Added login functionality. NOTE: THIS IS NOT SECURE LOGIN, BUT HIGH FIDELITY MODELLING
         </activity>
     </application>
 
