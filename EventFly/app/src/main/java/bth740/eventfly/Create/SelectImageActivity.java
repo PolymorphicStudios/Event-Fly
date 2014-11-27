@@ -84,12 +84,12 @@ public class SelectImageActivity extends Activity {
 
     public void onNextActivityClicked(View v) {
         //Store image name?
-        Intent intent = new Intent(THIS,SelectImageActivity.class);
+        Intent intent = new Intent(THIS,MiscInfoActivity.class);
         startActivity(intent);
     }
 
     //----------------------------------------------------------------------------------------------
-    //MOAR Nested classes.. I really am a monster.. that or a genius
+    //MOAR Nested classes. I really am a monster; that or a genius
     public class ImageAdapter extends BaseAdapter {
         private Context mContext;
 

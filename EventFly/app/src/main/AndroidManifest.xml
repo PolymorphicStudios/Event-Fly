@@ -24,7 +24,16 @@
         </activity>
         <activity
             android:name="bth740.eventfly.Create.SelectImageActivity"
-            android:label="@string/title_activity_select_image" >
+            android:label="@string/title_activity_select_image"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="bth740.eventfly.Create.MiscInfoActivity"
+            android:label="@string/title_activity_misc_info"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

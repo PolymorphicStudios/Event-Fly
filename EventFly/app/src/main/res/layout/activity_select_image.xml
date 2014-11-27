@@ -8,7 +8,7 @@
 
     <!-- EVENT CREATION STEP 2/4 TITLE -->
     <TextView
-        android:id="@+id/ec_step1_title_tv"
+        android:id="@+id/ec_step2_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EVENT CREATION - STEP 2/4"
@@ -17,7 +17,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/ec_step1_title_tv"
+        android:layout_below="@+id/ec_step2_title_tv"
         android:background="#666666" />
 
     <!-- Begin Image Selection -->
@@ -25,7 +25,7 @@
         android:id="@+id/ec_image_selection_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_step1_title_tv"
+        android:layout_below="@+id/ec_step2_title_tv"
         android:layout_marginTop="5dp"
         android:text="Please select a photo to use"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
