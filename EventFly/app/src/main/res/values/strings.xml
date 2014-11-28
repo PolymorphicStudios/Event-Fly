@@ -4,6 +4,11 @@
     <string name="app_name">EventFly</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_enter_fields">EnterFieldsActivity</string>
+    <string name="title_activity_select_image">SelectImageActivity</string>
+    <string name="title_activity_misc_info">MiscInfoActivity</string>
+    <string name="title_activity_event_description">EventDescriptionActivity</string>
+    <string name="title_activity_creation_confirmation">CreationConfirmationActivity</string>
     <string name="title_activity_view_recipe">ViewRecipeActivity</string>
     <string name="status_option_prompt">Choose an option</string>
 

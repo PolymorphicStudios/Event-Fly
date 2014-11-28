@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 
+import bth740.eventfly.Create.EnterFieldsActivity;
+
 
 public class MainActivity extends Activity {
     Button logoutBtn;
@@ -33,21 +35,24 @@ public class MainActivity extends Activity {
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         actionBar.addTab(actionBar.newTab().setText("Create").setTabListener(new ActionBar.TabListener() {
-                @Override
-                public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                    Toast.makeText(getBaseContext(), "CREATE Clicked", Toast.LENGTH_LONG).show();
-                }
+                    @Override
+                    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+                        //Toast.makeText(getBaseContext(), "CREATE Clicked", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, EnterFieldsActivity.class);
+                        startActivity(intent);
+                        
+                    }
 
-                @Override
-                public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                    @Override
+                    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                }
+                    }
 
-                @Override
-                public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+                    @Override
+                    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-                }
-            })
+                    }
+                })
         );
 
         actionBar.addTab(actionBar.newTab().setText("History").setTabListener(new ActionBar.TabListener() {
