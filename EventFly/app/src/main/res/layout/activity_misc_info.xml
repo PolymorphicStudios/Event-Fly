@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_step3_title_tv"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:text="Misc. Information"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_misc_info_title_tv"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="75dp"
         android:text="Max Guests"
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_max_guests_np"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="Cost: "
         android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -123,7 +123,7 @@
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/ec_cost_et"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="#999999"/>
 
     <!-- Difficulty -->
