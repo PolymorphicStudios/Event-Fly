@@ -1,186 +1,207 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context="bth740.eventfly.Create.EnterFieldsActivity">
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <!-- EVENT CREATION STEP 1/4 TITLE -->
-    <TextView
-        android:id="@+id/ec_step1_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EVENT CREATION - STEP 1/4"
-        android:textColor="#666666"/>
+            <!-- EVENT CREATION STEP 1/4 TITLE -->
+            <TextView
+                android:id="@+id/ec_step1_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EVENT CREATION - STEP 1/4"
+                android:textColor="#666666"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/ec_step1_title_tv"
-        android:background="#666666" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ec_step1_title_tv"
+                android:background="#666666" />
 
-    <!-- Begin Fields -->
-    <TextView
-        android:id="@+id/ec_fields_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_step1_title_tv"
-        android:layout_marginTop="5dp"
-        android:text="Please fill out the following fields"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-    <TextView
-        android:id="@+id/ec_required_fields_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_fields_title_tv"
-        android:layout_marginTop="5dp"
-        android:text="*required"
-        android:textStyle="italic"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Begin Fields -->
+            <TextView
+                android:id="@+id/ec_fields_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_step1_title_tv"
+                android:layout_marginTop="5dp"
+                android:text="Please fill out the following fields"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+            <TextView
+                android:id="@+id/ec_required_fields_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_fields_title_tv"
+                android:layout_marginTop="5dp"
+                android:text="*required"
+                android:textStyle="italic"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <!-- Event Title -->
-    <TextView
-        android:id="@+id/ec_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ec_title_field_et"
-        android:text="Title * "
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Event Title -->
+            <TextView
+                android:id="@+id/ec_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ec_title_field_et"
+                android:text="Title * "
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <EditText
-        android:id="@+id/ec_title_field_et"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_required_fields_title_tv"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginTop="15dp"
-        android:singleLine="true"
-        android:imeOptions="actionNext"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <EditText
+                android:id="@+id/ec_title_field_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_required_fields_title_tv"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginTop="15dp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <!-- Event Location -->
-    <TextView
-        android:id="@+id/ec_location_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ec_location_field_et"
-        android:text="Location * "
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Event Location -->
+            <TextView
+                android:id="@+id/ec_location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ec_location_field_et"
+                android:text="Location * "
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <EditText
-        android:id="@+id/ec_location_field_et"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_title_field_et"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginTop="5dp"
-        android:singleLine="true"
-        android:imeOptions="actionNext"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <EditText
+                android:id="@+id/ec_location_field_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_title_field_et"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <!-- Event Tags -->
-    <TextView
-        android:id="@+id/ec_tags_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ec_tags_field_et"
-        android:text="Tags "
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Event Tags -->
+            <TextView
+                android:id="@+id/ec_tags_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ec_tags_field_et"
+                android:text="Tags "
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <EditText
-        android:id="@+id/ec_tags_field_et"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_location_field_et"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginTop="5dp"
-        android:singleLine="true"
-        android:imeOptions="actionDone"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <EditText
+                android:id="@+id/ec_tags_field_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_location_field_et"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <!-- Event Date -->
-    <TextView
-        android:id="@+id/ec_date_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ec_date_field_et"
-        android:text="Date * "
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Event Date -->
+            <TextView
+                android:id="@+id/ec_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ec_date_field_et"
+                android:text="Date * "
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <EditText
-        android:id="@+id/ec_date_field_et"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_tags_field_et"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginTop="5dp"
-        android:focusable="false"
-        android:onClick="onDateFieldClicked"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <EditText
+                android:id="@+id/ec_date_field_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_tags_field_et"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginTop="5dp"
+                android:focusable="false"
+                android:onClick="onDateFieldClicked"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <TextView
-        android:id="@+id/ec_date_field_tv"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ec_date_field_et"
-        android:layout_marginTop="7dp"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginLeft="12dp"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:onClick="onDateFieldClicked"/>
+            <TextView
+                android:id="@+id/ec_date_field_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ec_date_field_et"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginLeft="12dp"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:onClick="onDateFieldClicked"/>
 
-    <!-- Event Time -->
-    <TextView
-        android:id="@+id/ec_time_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ec_time_field_et"
-        android:text="Time * "
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!-- Event Time -->
+            <TextView
+                android:id="@+id/ec_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ec_time_field_et"
+                android:text="Time * "
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <EditText
-        android:id="@+id/ec_time_field_et"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ec_date_field_tv"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:onClick="onTimeFieldClicked"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <EditText
+                android:id="@+id/ec_time_field_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec_date_field_tv"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                android:onClick="onTimeFieldClicked"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <TextView
-        android:id="@+id/ec_time_field_tv"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ec_time_field_et"
-        android:layout_marginTop="7dp"
-        android:layout_toRightOf="@+id/ec_location_tv"
-        android:layout_marginLeft="12dp"
-        android:hint=""
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:onClick="onTimeFieldClicked"/>
+            <TextView
+                android:id="@+id/ec_time_field_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ec_time_field_et"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/ec_location_tv"
+                android:layout_marginLeft="12dp"
+                android:hint=""
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:onClick="onTimeFieldClicked"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:background="#666666" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                android:background="#666666" />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/forward"
-        android:onClick="onNextActivityClicked"/>
-
-</RelativeLayout>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/forward"
+                android:onClick="onNextActivityClicked"/>
+        </RelativeLayout>
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111"/>
+</android.support.v4.widget.DrawerLayout>
