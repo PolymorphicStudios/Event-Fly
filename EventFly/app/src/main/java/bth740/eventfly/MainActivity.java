@@ -37,9 +37,10 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab().setText("Create").setTabListener(new ActionBar.TabListener() {
                     @Override
                     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                        Toast.makeText(getBaseContext(), "CREATE Clicked", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getBaseContext(), "CREATE Clicked", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(context, EnterFieldsActivity.class);
                         startActivity(intent);
+                        
                     }
 
                     @Override
