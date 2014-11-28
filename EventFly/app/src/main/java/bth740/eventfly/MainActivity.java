@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 
+import bth740.eventfly.Create.EnterFieldsActivity;
+
 
 public class MainActivity extends Activity {
     Button logoutBtn;
@@ -36,6 +38,8 @@ public class MainActivity extends Activity {
                     @Override
                     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
                         Toast.makeText(getBaseContext(), "CREATE Clicked", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, EnterFieldsActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override

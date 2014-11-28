@@ -17,9 +17,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import bth740.eventfly.MainActivity;
 import bth740.eventfly.R;
+import bth740.eventfly.ViewRecipeActivity;
 
-public class SelectImageActivity extends Activity {
+public class SelectImageActivity extends MainActivity {
     protected Context THIS = null;
     ImageView image;
     GridView imageGrid;

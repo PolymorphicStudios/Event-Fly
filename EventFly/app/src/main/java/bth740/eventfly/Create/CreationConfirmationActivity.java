@@ -10,8 +10,9 @@ import android.view.View;
 
 import bth740.eventfly.MainActivity;
 import bth740.eventfly.R;
+import bth740.eventfly.ViewRecipeActivity;
 
-public class CreationConfirmationActivity extends Activity {
+public class CreationConfirmationActivity extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

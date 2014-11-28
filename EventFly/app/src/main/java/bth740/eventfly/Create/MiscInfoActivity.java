@@ -26,8 +26,9 @@ import java.util.ArrayList;
 
 import bth740.eventfly.MainActivity;
 import bth740.eventfly.R;
+import bth740.eventfly.ViewRecipeActivity;
 
-public class MiscInfoActivity extends Activity {
+public class MiscInfoActivity extends MainActivity {
     protected static Context THIS = null;
     static ListView items_lv;
     NumberPicker np;

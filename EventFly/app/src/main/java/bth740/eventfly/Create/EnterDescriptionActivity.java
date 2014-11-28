@@ -8,9 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import bth740.eventfly.MainActivity;
 import bth740.eventfly.R;
+import bth740.eventfly.ViewRecipeActivity;
 
-public class EnterDescriptionActivity extends Activity {
+public class EnterDescriptionActivity extends MainActivity {
     protected static Context THIS = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

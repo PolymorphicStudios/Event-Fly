@@ -19,9 +19,11 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
+import bth740.eventfly.MainActivity;
 import bth740.eventfly.R;
+import bth740.eventfly.ViewRecipeActivity;
 
-public class EnterFieldsActivity extends Activity {
+public class EnterFieldsActivity extends MainActivity {
     static TextView date_tv, time_tv;
     protected Context THIS = null;
 
