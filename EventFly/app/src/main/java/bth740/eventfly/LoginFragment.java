@@ -3,13 +3,17 @@ package bth740.eventfly;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -25,6 +29,8 @@ import java.util.Locale;
  */
 public class LoginFragment extends Fragment {
     Button loginButton;
+    EditText user_et, pass_et;
+    String user, pass;
 
     public LoginFragment() {}
 
@@ -50,12 +56,15 @@ public class LoginFragment extends Fragment {
 
         //Our stuff to have done on creation (listeners and bindings)
         loginButton = (Button) rootView.findViewById(R.id.login_btn);
+        user_et = (EditText) rootView.findViewById(R.id.login_uname_et);
+        pass_et = (EditText) rootView.findViewById(R.id.login_pass_et);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                user = user_et.getText().toString();
+                pass = pass_et.getText().toString();
 
-                if((rootView.findViewById(R.id.login_uname_et).equals("Olivier") ||
-                    rootView.findViewById(R.id.login_uname_et).equals("olivier")) &&
-                    rootView.findViewById(R.id.login_pass_et).equals("password")) {
+                if((user.equals("Olivier") || user.equals("olivier")) &&  pass.equals("password")) {
                     Toast.makeText(getActivity(), "Logging in...", Toast.LENGTH_SHORT).show();
                     MainActivity.isLoggedIn = true;
                     MainActivity.loginBtn.setText("Logout");
@@ -65,6 +74,10 @@ public class LoginFragment extends Fragment {
                 {
                     Toast.makeText(getActivity(), "Incorrect credentials", Toast.LENGTH_SHORT).show();
                 }
+
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(user_et.getWindowToken(), 0);
             }
         });
 

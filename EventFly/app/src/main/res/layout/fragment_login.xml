@@ -25,26 +25,31 @@
         android:id="@+id/login_uname_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_title_tv"
+        android:layout_alignBottom="@+id/login_uname_et"
         android:text="Username: "/>
 
     <EditText
         android:id="@+id/login_uname_et"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/login_uname_tv"/>
+        android:layout_below="@+id/login_title_tv"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/login_uname_tv"
+        android:singleLine="true"
+        android:imeOptions="actionNext"/>
 
     <TextView
         android:id="@+id/login_pass_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_uname_et"
+        android:layout_alignBottom="@+id/login_pass_et"
         android:text="Password: "/>
 
     <EditText
         android:id="@+id/login_pass_et"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/login_uname_et"
         android:inputType="textPassword"
         android:layout_toRightOf="@+id/login_pass_tv" />
 
@@ -54,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_pass_et"
         android:text="Login"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 
 </RelativeLayout>
