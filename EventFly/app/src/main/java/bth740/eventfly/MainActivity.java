@@ -2,6 +2,7 @@ package bth740.eventfly;
 
 import java.util.Locale;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -21,11 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import bth740.eventfly.Create.EnterFieldsFragment;
+import bth740.eventfly.View.ViewEventFragment;
 
 public class MainActivity extends Activity {
     final Context context = this;
@@ -38,12 +42,23 @@ public class MainActivity extends Activity {
     private CharSequence mTitle;
     private String[] navPages;
 
+    Button loginBtn;
+    TextView actionTitleText;
+    boolean isDrawerOpen = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTitle = mDrawerTitle = "Event-Fly";//getTitle();
+        ActionBar actionBar = getActionBar();
+        actionBar.setCustomView(R.layout.action_buttons);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        actionTitleText = (TextView) actionBar.getCustomView().findViewById(R.id.action_title_txt);
+        actionTitleText.setText("Event-Fly");
+
+        mTitle = mDrawerTitle = "Event-Fly";
         navPages = getResources().getStringArray(R.array.nav_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -55,9 +70,22 @@ public class MainActivity extends Activity {
                 R.layout.drawer_list_item, navPages));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
+        actionTitleText = (TextView) actionBar.getCustomView().findViewById(R.id.action_title_txt);
+        actionTitleText.setText(mDrawerTitle);
+        actionTitleText.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (isDrawerOpen) {
+                    mDrawerLayout.closeDrawer(mDrawerList);
+                } else
+                    mDrawerLayout.openDrawer(mDrawerList);
+            }
+        });
+
         // enable ActionBar app icon to behave as action to toggle nav drawer
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
@@ -69,11 +97,13 @@ public class MainActivity extends Activity {
                 R.string.drawer_close  /* "close drawer" description for accessibility */
         ) {
             public void onDrawerClosed(View view) {
-                getActionBar().setTitle(mTitle);
+                actionTitleText.setText(mTitle);
+                isDrawerOpen = false;
             }
 
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
+                actionTitleText.setText(mDrawerTitle);
+                isDrawerOpen = true;
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -81,6 +111,16 @@ public class MainActivity extends Activity {
         if (savedInstanceState == null) {
             selectItem(0);
         }
+
+        //----------------
+        loginBtn = (Button) actionBar.getCustomView().findViewById(R.id.login_btn);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(), "Login Clicked", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -112,13 +152,14 @@ public class MainActivity extends Activity {
 
         switch (position) {
             case 1: fragment = new EnterFieldsFragment(); break;
+            case 4: fragment = new ViewEventFragment(); break;
             default: fragment = new NavFragment(); break;
         }
 
         args.putInt(NavFragment.ARG_NAV_NUMBER, position);
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
-
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
@@ -148,7 +189,7 @@ public class MainActivity extends Activity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
+        // Pass any configuration change to the drawer toggle
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 

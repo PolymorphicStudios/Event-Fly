@@ -22,6 +22,7 @@
         <item>Create</item>
         <item>History</item>
         <item>Account</item>
+        <item>View</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
