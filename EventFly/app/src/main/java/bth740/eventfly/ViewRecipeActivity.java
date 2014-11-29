@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import bth740.eventfly.Create.EnterFieldsActivity;
 
 
 public class ViewRecipeActivity extends Activity {

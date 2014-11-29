@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="bth740.eventfly.Create.CreationConfirmationActivity">
+    tools:context="bth740.eventfly.Create.CreationConfirmationFragment">
 
     <!-- EVENT CREATION COMPLETE TITLE -->
     <TextView
@@ -28,16 +28,15 @@
         android:layout_below="@+id/ec_complete_title_tv"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
-        android:text="Thank you! Please enjoy the event\nClick below to return to the main screen"
+        android:text="Thank you! Please enjoy the event\nClick below to view the event"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
-        android:id="@+id/ec_returnToMainScreen_b"
+        android:id="@+id/ec_goToEvent_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ec_complete_info_title_tv"
-        android:text="Main Screen"
-        android:layout_centerHorizontal="true"
-        android:onClick="onMainScreenClicked"/>
+        android:text="To Event"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

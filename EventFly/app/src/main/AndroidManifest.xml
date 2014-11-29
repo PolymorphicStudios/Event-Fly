@@ -17,24 +17,16 @@
     <application
         android:allowBackup="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="bth740.eventfly.MainActivity" >
+        <activity
+            android:name="bth740.eventfly.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="bth740.eventfly.Create.EnterFieldsActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_enter_fields"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="bth740.eventfly.Create.SelectImageActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_select_image"
-            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="bth740.eventfly.Create.MiscInfoActivity"

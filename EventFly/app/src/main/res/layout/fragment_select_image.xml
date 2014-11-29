@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="bth740.eventfly.Create.SelectImageFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <!-- EVENT CREATION STEP 2/4 TITLE -->
+    <TextView
+        android:id="@+id/ec_step2_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENT CREATION - STEP 2/4"
+        android:textColor="#666666"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ec_step2_title_tv"
+        android:background="#666666" />
+
+    <!-- Begin Image Selection -->
+    <TextView
+        android:id="@+id/ec_image_selection_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_step2_title_tv"
+        android:layout_marginTop="5dp"
+        android:text="Please select a photo to use"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <GridView
+        android:id="@+id/ec_image_grid_gv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ec_image_selection_title_tv"
+        android:layout_above="@+id/ec_footer"
+        android:layout_marginTop="10dp"
+        android:columnWidth="150dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"/>
+
+    <!-- Footer -->
+
+    <View
+        android:id="@+id/ec_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="#666666" />
+
+    <ImageView
+        android:id="@+id/ec_back_image_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/back"/>
+
+    <ImageView
+        android:id="@+id/ec_forward_image_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/forward"/>
+
+</RelativeLayout>
+
