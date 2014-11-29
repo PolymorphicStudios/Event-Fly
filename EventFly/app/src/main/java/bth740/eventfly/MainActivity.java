@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -29,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import bth740.eventfly.Create.EnterFieldsFragment;
+import bth740.eventfly.View.ContactHostFragment;
 import bth740.eventfly.View.ViewEventFragment;
 
 public class MainActivity extends Activity {
@@ -42,9 +44,10 @@ public class MainActivity extends Activity {
     private CharSequence mTitle;
     private String[] navPages;
 
-    Button loginBtn;
+    static Button loginBtn;
     TextView actionTitleText;
     boolean isDrawerOpen = false;
+    static boolean isLoggedIn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +121,20 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Login Clicked", Toast.LENGTH_LONG).show();
+                if (isLoggedIn){
+                    isLoggedIn = false;
+                    loginBtn.setText("Log in");
+                    Toast.makeText(getBaseContext(), "Logging out...", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction ft = fragmentManager.beginTransaction();
+                    ft.replace(R.id.content_frame, new LoginFragment());
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    ft.addToBackStack("login");
+                    ft.commit();
+                }
+
             }
         });
     }
