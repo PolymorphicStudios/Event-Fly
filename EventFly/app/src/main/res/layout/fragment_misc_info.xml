@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="bth740.eventfly.Create.MiscInfoFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <!-- EVENT CREATION STEP 3/4 TITLE -->
+    <TextView
+        android:id="@+id/ec_step3_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENT CREATION - STEP 3/4"
+        android:textColor="#666666"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ec_step3_title_tv"
+        android:background="#666666" />
+
+    <!-- Begin Filling Misc Fields -->
+    <TextView
+        android:id="@+id/ec_misc_info_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_step3_title_tv"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Misc. Information"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <!-- Bar used to divide the two halves of the page -->
+    <View
+        android:id="@+id/ec_vertical_divide_v"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ec_horizontal_divide_v"
+        android:layout_below="@+id/ec_misc_info_title_tv"
+        android:background="#999999"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Left Side -->
+    <!-- Max Guests -->
+    <TextView
+        android:id="@+id/ec_max_guests_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_misc_info_title_tv"
+        android:layout_marginTop="85dp"
+        android:text="Max Guests"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <NumberPicker
+        android:id="@+id/ec_max_guests_np"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_misc_info_title_tv"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/ec_max_guests_tv"
+        android:layout_toLeftOf="@+id/ec_vertical_divide_v"/>
+
+    <!-- Cost -->
+    <TextView
+        android:id="@+id/ec_cost_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_max_guests_np"
+        android:layout_marginTop="10dp"
+        android:text="Cost: "
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <EditText
+        android:id="@+id/ec_cost_et"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_max_guests_np"
+        android:layout_toRightOf="@+id/ec_cost_tv"
+        android:layout_toLeftOf="@+id/ec_vertical_divide_v"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:inputType="numberDecimal"
+        android:hint="$$$"/>
+
+    <!-- Right Side -->
+    <!-- Equipment -->
+    <TextView
+        android:id="@+id/ec_need_to_bring_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_misc_info_title_tv"
+        android:layout_toRightOf="@id/ec_vertical_divide_v"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="Need to bring: "/>
+
+    <ImageView
+        android:id="@+id/ec_add_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/ec_misc_info_title_tv"
+        android:layout_toRightOf="@+id/ec_need_to_bring_tv"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/add"/>
+
+    <!--List of Equipment -->
+    <ListView
+        android:id="@+id/ec_items_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ec_add_iv"
+        android:layout_toRightOf="@id/ec_vertical_divide_v"
+        android:layout_above="@id/ec_horizontal_divide_v"
+        android:layout_margin="5dp"/>
+
+    <!-- Horizontal Divider -->
+    <View
+        android:id="@+id/ec_horizontal_divide_v"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ec_cost_et"
+        android:layout_marginTop="15dp"
+        android:background="#999999"/>
+
+    <!-- Difficulty -->
+    <TextView
+        android:id="@+id/ec_difficulty_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ec_horizontal_divide_v"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="DIFFICULTY"/>
+
+    <TextView
+        android:id="@+id/ec_difficulty_novice_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ec_difficulty_title_tv"
+        android:layout_marginTop="10dp"
+        android:text="Novice"/>
+
+    <TextView
+        android:id="@+id/ec_difficulty_expert_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ec_difficulty_title_tv"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:text="Expert"/>
+
+    <SeekBar
+        android:id="@+id/ec_difficulty_bar_sb"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ec_difficulty_title_tv"
+        android:layout_toRightOf="@+id/ec_difficulty_novice_tv"
+        android:layout_toLeftOf="@+id/ec_difficulty_expert_tv"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:id="@+id/ec_difficulty_show_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ec_difficulty_bar_sb"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="Show"/>
+
+    <!-- Footer -->
+    <View
+        android:id="@+id/ec_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="#666666" />
+
+    <ImageView
+        android:id="@+id/ec_back_image_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/back"/>
+
+    <ImageView
+        android:id="@+id/ec_forward_image_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/forward"/>
+
+</RelativeLayout>

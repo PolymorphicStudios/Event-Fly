@@ -11,11 +11,11 @@
         android:padding="10dp" />
 
     <Button
-        android:id="@+id/logout_btn"
+        android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         style="?android:attr/buttonStyleSmall"
-        android:text="Logout"
+        android:text="Log in"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
         android:layout_margin="5dp"
