@@ -59,7 +59,7 @@ public class EventlistFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_eventlist, container, false);
         String nav = getResources().getStringArray(R.array.nav_array)[0];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
@@ -75,7 +75,7 @@ public class EventlistFragment extends Fragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                if( pos == 0) { pos = featureImages.length; }
+                if( pos == 0) { pos = featureImages.length-1; }
                 else          { pos--; }
 
                 featureImage.setImageResource(featureImages[pos]);
@@ -85,8 +85,8 @@ public class EventlistFragment extends Fragment {
         forwardButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                if(pos == featureImages.length){ pos = 0; }
-                else                           { pos++;}
+                if(pos == featureImages.length-1){ pos = 0; }
+                else                             { pos++;}
 
                 featureImage.setImageResource(featureImages[pos]);
             }

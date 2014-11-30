@@ -7,7 +7,7 @@
     tools:context="bth740.eventfly.EventlistFragment">
 
     <TextView
-        android:id="@+id/login_title_tv"
+        android:id="@+id/event_list_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Events"
@@ -17,34 +17,41 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/login_title_tv"
+        android:layout_below="@+id/event_list_title_tv"
         android:background="#666666" />
 
     <ImageView
         android:id="@+id/eventlist_back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/back"
-        android:layout_toLeftOf="@+id/eventlist_feature_img"/>
+        android:layout_toLeftOf="@+id/eventlist_feature_img"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="130dp"/>
 
     <ImageView
         android:id="@+id/eventlist_feature_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"/>
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/event_list_title_tv"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/basketball"/>
 
     <ImageView
         android:id="@+id/eventlist_forward_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/forward"
-        android:layout_toRightOf="@+id/eventlist_feature_img"/>
+        android:layout_toRightOf="@+id/eventlist_feature_img"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"/>
 
     <ListView
         android:id="@+id/eventlist_event_list"
         android:layout_width="fill_parent"
-        android:layout_height="55dp"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/eventlist_feature_img"
-        android:layout_marginTop="2dp"></ListView>
+        android:layout_marginTop="2dp"/>
 
 </RelativeLayout>
