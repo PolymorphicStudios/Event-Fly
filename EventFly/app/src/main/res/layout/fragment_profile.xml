@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="bth740.eventfly.View.EventlistFragment">
+
+    <!-- PROFILE TITLE -->
+    <TextView
+        android:id="@+id/profile_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="#666666"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/profile_title_tv"
+        android:background="#666666" />
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/profile_image_iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/profile_title_tv"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/olivierstcyr"/>
+
+    <!-- Profile Details -->
+    <TextView
+        android:id="@+id/username_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_title_tv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:text="Olivier St-Cyr"/>
+
+    <TextView
+        android:id="@+id/profile_phone_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username_tv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="(416) 491-5050"/>
+
+    <TextView
+        android:id="@+id/profile_role_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_phone_tv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Standard User"/>
+
+    <TextView
+        android:id="@+id/profile_interests_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image_iv"
+        android:text="Interests"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/profile_interests_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_interests_title_tv"
+        android:layout_marginTop="5dp"
+        android:text="Teaching, Programming, Criticizing UX"/>
+
+    <TextView
+        android:id="@+id/profile_about_me_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_interests_tv"
+        android:layout_marginTop="10dp"
+        android:text="About me"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/profile_description_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_about_me_title_tv"
+        android:text="@string/filler_text"/>
+</RelativeLayout>
