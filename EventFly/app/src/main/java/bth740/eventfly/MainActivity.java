@@ -7,17 +7,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,12 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import bth740.eventfly.Create.EnterFieldsFragment;
-import bth740.eventfly.View.ContactHostFragment;
+import bth740.eventfly.Profile.ProfileFragment;
+import bth740.eventfly.View.EventlistFragment;
 import bth740.eventfly.View.ViewEventFragment;
 
 public class MainActivity extends Activity {
-    final Context context = this;
-
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -43,6 +37,8 @@ public class MainActivity extends Activity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] navPages;
+
+    private int thisPosition = 0;
 
     static Button loginBtn;
     TextView actionTitleText;
@@ -127,6 +123,7 @@ public class MainActivity extends Activity {
                     Toast.makeText(getBaseContext(), "Logging out...", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    mDrawerLayout.closeDrawer(mDrawerList);
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction ft = fragmentManager.beginTransaction();
                     ft.replace(R.id.content_frame, new LoginFragment());
@@ -165,37 +162,47 @@ public class MainActivity extends Activity {
         // update the main content by replacing fragments
         Fragment fragment;
         Bundle args = new Bundle();
+        boolean canChange = true;
 
         switch (position) {
-            case 0: fragment = new ViewEventFragment(); break;
+            case 0: fragment = new EventlistFragment(); break;
             case 1: fragment = new EnterFieldsFragment(); break;
             case 2:
                 if (isLoggedIn){ fragment = new ViewEventFragment();}
                 else {
                     Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
-                    fragment = new LoginFragment();
+                    fragment = new NavFragment();
+                    canChange = false;
                 }
                 break;
             case 3:
-                if (isLoggedIn){ fragment = new NavFragment();}
+                if (isLoggedIn){ fragment = new ProfileFragment();}
                 else {
                     Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
-                    fragment = new LoginFragment();
+                    fragment = new NavFragment();
+                    canChange = false;
                 }
                 break;
             default: fragment = new NavFragment(); break;
         }
 
-        args.putInt(NavFragment.ARG_NAV_NUMBER, position);
-        fragment.setArguments(args);
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        if (canChange) {
+            args.putInt(NavFragment.ARG_NAV_NUMBER, position);
+            fragment.setArguments(args);
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-        // update selected item and title, then close the drawer
-        mDrawerList.setItemChecked(position, true);
-        setTitle(navPages[position]);
-        mDrawerLayout.closeDrawer(mDrawerList);
+            // update selected item and title, then close the drawer
+            mDrawerList.setItemChecked(position, true);
+            setTitle(navPages[position]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+            thisPosition = position;
+        }
+        else {
+            mDrawerList.setItemChecked(thisPosition, true);
+        }
+
     }
 
     @Override
