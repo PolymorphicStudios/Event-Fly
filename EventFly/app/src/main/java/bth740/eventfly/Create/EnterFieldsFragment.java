@@ -95,7 +95,7 @@ public class EnterFieldsFragment extends Fragment {
                     onNextClicked();
                 }
                 else {
-                    Toast.makeText(getActivity(), "Missing fields, please fill all fields with *", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Missing fields, please fill all fields marked with *", Toast.LENGTH_LONG).show();
                 }
             }
         });

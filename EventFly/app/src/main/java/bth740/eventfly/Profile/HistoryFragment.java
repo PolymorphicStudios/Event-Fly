@@ -1,4 +1,4 @@
-package bth740.eventfly.View;
+package bth740.eventfly.Profile;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -16,6 +16,7 @@ import android.widget.ListView;
 import java.util.Locale;
 
 import bth740.eventfly.R;
+import bth740.eventfly.View.ViewEventFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +52,7 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_history, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[0];
+        String nav = getResources().getStringArray(R.array.nav_array)[2];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());

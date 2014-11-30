@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import bth740.eventfly.Create.EnterFieldsFragment;
+import bth740.eventfly.Profile.HistoryFragment;
 import bth740.eventfly.Profile.ProfileFragment;
 import bth740.eventfly.View.EventlistFragment;
 import bth740.eventfly.View.ViewEventFragment;
@@ -168,7 +169,7 @@ public class MainActivity extends Activity {
             case 0: fragment = new EventlistFragment(); break;
             case 1: fragment = new EnterFieldsFragment(); break;
             case 2:
-                if (isLoggedIn){ fragment = new ViewEventFragment();}
+                if (isLoggedIn){ fragment = new HistoryFragment();}
                 else {
                     Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
                     fragment = new NavFragment();
