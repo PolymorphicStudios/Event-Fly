@@ -167,7 +167,7 @@ public class MainActivity extends Activity {
         Bundle args = new Bundle();
 
         switch (position) {
-            case 0: fragment = new ViewEventFragment(); break;
+            case 0: fragment = new EventlistFragment(); break;
             case 1: fragment = new EnterFieldsFragment(); break;
             case 2:
                 if (isLoggedIn){ fragment = new ViewEventFragment();}
