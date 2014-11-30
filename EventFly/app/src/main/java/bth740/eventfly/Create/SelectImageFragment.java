@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -31,11 +32,10 @@ import bth740.eventfly.R;
  */
 public class SelectImageFragment extends Fragment {
     public static final String ARG_NAV_NUMBER = "nav_number";
-    Fragment previous;
     GridView imageGrid;
     View oldImageView;
     ImageView back_iv, forward_iv;
-
+    boolean imageSelected = false;
 
     public SelectImageFragment() {}
 
@@ -77,6 +77,7 @@ public class SelectImageFragment extends Fragment {
                     v.invalidate();
                 }
                 oldImageView = v;
+                imageSelected = true;
             }
         });
 
@@ -84,7 +85,12 @@ public class SelectImageFragment extends Fragment {
             public void onClick(View view) { back(); }
         });
         forward_iv.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) { forwards(); }
+            public void onClick(View view) {
+                if (imageSelected)
+                    forwards();
+                else
+                    Toast.makeText(getActivity(), "Please select an image", Toast.LENGTH_LONG).show();
+            }
         });
 
         //Return the view

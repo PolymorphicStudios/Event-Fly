@@ -1,9 +1,8 @@
-package bth740.eventfly;
+package bth740.eventfly.View;
 
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -11,14 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 
 import java.util.Locale;
 
-import bth740.eventfly.View.ViewEventFragment;
+import bth740.eventfly.R;
 
 
 /**

@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -37,7 +38,8 @@ import bth740.eventfly.R;
 public class EnterFieldsFragment extends Fragment {
     public static final String ARG_NAV_NUMBER = "nav_number";
     static TextView date_tv, time_tv;
-    static EditText date_et, time_et;
+    static EditText title_et, location_et, date_et, time_et;
+    String title, location, date, time;
     ImageView forward_iv;
 
     public EnterFieldsFragment() {}
@@ -64,6 +66,8 @@ public class EnterFieldsFragment extends Fragment {
                 "drawable", getActivity().getPackageName());
         getActivity().setTitle(nav);
 
+        title_et = (EditText) rootView.findViewById(R.id.ec_title_field_et);
+        location_et = (EditText) rootView.findViewById(R.id.ec_location_field_et);
         date_et  = (EditText) rootView.findViewById(R.id.ec_date_field_et);
         date_tv = (TextView) rootView.findViewById((R.id.ec_date_field_tv));
         time_et  = (EditText) rootView.findViewById(R.id.ec_time_field_et);
@@ -86,7 +90,14 @@ public class EnterFieldsFragment extends Fragment {
             public void onClick(View view) { onTimeFieldClicked(); }
         });
         forward_iv.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) { onNextClicked(); }
+            public void onClick(View view) {
+                if (validFields()){
+                    onNextClicked();
+                }
+                else {
+                    Toast.makeText(getActivity(), "Missing fields, please fill all fields with *", Toast.LENGTH_LONG).show();
+                }
+            }
         });
 
 
@@ -104,6 +115,16 @@ public class EnterFieldsFragment extends Fragment {
 
     //----------------------------------------------------------------------------------------------
     // My methods for the fragment
+    private boolean validFields() {
+        boolean isValid = true;
+        title = title_et.getText().toString().trim();
+        location = location_et.getText().toString().trim();
+        date = date_tv.getText().toString().trim();
+        time = time_tv.getText().toString().trim();
+        if (title.equals("") || location.equals("") || date.equals("") || time.equals(""))
+            isValid = false;
+        return isValid;
+    }
 
     public void onDateFieldClicked() {
         DialogFragment newFragment = new DatePickerFragment();
