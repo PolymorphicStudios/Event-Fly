@@ -42,7 +42,7 @@ public class ViewEventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Required stuff for fragment creation
         View rootView = inflater.inflate(R.layout.fragment_view_event, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[4];
+        String nav = getResources().getStringArray(R.array.nav_array)[0];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());

@@ -167,8 +167,22 @@ public class MainActivity extends Activity {
         Bundle args = new Bundle();
 
         switch (position) {
+            case 0: fragment = new ViewEventFragment(); break;
             case 1: fragment = new EnterFieldsFragment(); break;
-            case 4: fragment = new ViewEventFragment(); break;
+            case 2:
+                if (isLoggedIn){ fragment = new ViewEventFragment();}
+                else {
+                    Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
+                    fragment = new LoginFragment();
+                }
+                break;
+            case 3:
+                if (isLoggedIn){ fragment = new NavFragment();}
+                else {
+                    Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
+                    fragment = new LoginFragment();
+                }
+                break;
             default: fragment = new NavFragment(); break;
         }
 
