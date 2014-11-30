@@ -48,7 +48,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Required stuff for fragment creation
         final View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[0];
+        String nav = "Log in";
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());

@@ -18,11 +18,11 @@
         <item>Not Going</item>
     </string-array>
     <string-array name="nav_array">
-        <item>Near Me</item>
+        <item>Featured</item>
+        <item>View All</item>
         <item>Create</item>
         <item>History</item>
-        <item>Account</item>
-        <item>View</item>
+        <item>Profile</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
