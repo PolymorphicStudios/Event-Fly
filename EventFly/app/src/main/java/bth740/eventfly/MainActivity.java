@@ -114,6 +114,9 @@ public class MainActivity extends Activity {
 
         //----------------
         loginBtn = (Button) actionBar.getCustomView().findViewById(R.id.login_btn);
+        if (isLoggedIn){
+            loginBtn.setText("Logout");
+        }
         loginBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
