@@ -18,7 +18,8 @@
         <item>Not Going</item>
     </string-array>
     <string-array name="nav_array">
-        <item>View Events</item>
+        <item>Featured</item>
+        <item>Near Me</item>
         <item>Create</item>
         <item>History</item>
         <item>Profile</item>

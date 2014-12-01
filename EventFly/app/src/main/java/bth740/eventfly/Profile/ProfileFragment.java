@@ -22,6 +22,7 @@ import bth740.eventfly.R;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
+    public static final String ARG_NAV_NUMBER = "nav_number";
 
     public ProfileFragment() {}
 
@@ -41,7 +42,8 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Required stuff for fragment creation
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[3];
+        int i = getArguments().getInt(ARG_NAV_NUMBER);
+        String nav = getResources().getStringArray(R.array.nav_array)[i];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());
