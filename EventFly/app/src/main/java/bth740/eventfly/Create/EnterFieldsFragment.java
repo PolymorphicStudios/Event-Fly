@@ -197,15 +197,19 @@ public class EnterFieldsFragment extends Fragment {
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             String am_pm = "am";
+            String min = String.valueOf(minute);
             if(hourOfDay > 12){
                 hourOfDay -=12;
                 am_pm = "pm";
+            }
+            if (minute < 10) {
+                min = "0"+min;
             }
 
             if (mListener != null) {
                 mListener.onTimeSet(view, hourOfDay, minute);
             }
-            time_tv.setText(String.valueOf(hourOfDay) + ":" + String.valueOf(minute) + " " + am_pm);
+            time_tv.setText(String.valueOf(hourOfDay) + ":" + min + " " + am_pm);
         }
     }
 
