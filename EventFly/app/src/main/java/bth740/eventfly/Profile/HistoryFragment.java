@@ -62,7 +62,7 @@ public class HistoryFragment extends Fragment {
 
         listview.setAdapter(new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, events));
 
-        //All event scroller
+        //Our stuff to have done on creation (listeners and bindings)
         listview.setOnItemClickListener(new EventItemClickListener());
 
 
