@@ -70,7 +70,7 @@ public class MiscInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Required stuff for fragment creation
         View rootView = inflater.inflate(R.layout.fragment_misc_info, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[1];
+        String nav = getResources().getStringArray(R.array.nav_array)[2];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());

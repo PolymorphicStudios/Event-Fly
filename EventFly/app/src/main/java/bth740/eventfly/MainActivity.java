@@ -28,6 +28,7 @@ import bth740.eventfly.Create.EnterFieldsFragment;
 import bth740.eventfly.Profile.HistoryFragment;
 import bth740.eventfly.Profile.ProfileFragment;
 import bth740.eventfly.View.EventlistFragment;
+import bth740.eventfly.View.FeaturedFragment;
 import bth740.eventfly.View.ViewEventFragment;
 
 public class MainActivity extends Activity {
@@ -169,9 +170,10 @@ public class MainActivity extends Activity {
         boolean canChange = true;
 
         switch (position) {
-            case 0: fragment = new EventlistFragment(); break;
-            case 1: fragment = new EnterFieldsFragment(); break;
-            case 2:
+            case 0: fragment = new FeaturedFragment(); break;
+            case 1: fragment = new EventlistFragment(); break;
+            case 2: fragment = new EnterFieldsFragment(); break;
+            case 3:
                 if (isLoggedIn){ fragment = new HistoryFragment();}
                 else {
                     Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
@@ -179,7 +181,7 @@ public class MainActivity extends Activity {
                     canChange = false;
                 }
                 break;
-            case 3:
+            case 4:
                 if (isLoggedIn){ fragment = new ProfileFragment();}
                 else {
                     Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
