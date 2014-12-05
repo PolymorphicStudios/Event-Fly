@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -26,6 +27,8 @@ import bth740.eventfly.R;
  */
 public class ViewEventFragment extends Fragment {
     Button reminderBtn, contactBtn;
+    Spinner going;
+    boolean isLoggedIn = true;
 
     public ViewEventFragment() {}
 
@@ -43,6 +46,8 @@ public class ViewEventFragment extends Fragment {
         //Required stuff for fragment creation
         View rootView = inflater.inflate(R.layout.fragment_view_event, container, false);
         String nav = getResources().getStringArray(R.array.nav_array)[0];
+        if(getArguments() != null)
+            isLoggedIn = getArguments().getBoolean("isLoggedIn");
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());
@@ -66,6 +71,15 @@ public class ViewEventFragment extends Fragment {
                 onContactClicked();
             }
         });
+
+        going = (Spinner) rootView.findViewById(R.id.spinner);
+
+        if(!isLoggedIn) {
+            reminderBtn.setVisibility(View.GONE);
+            contactBtn.setVisibility(View.GONE);
+            going.setVisibility(View.GONE);
+        }
+
         //Return the view
         return rootView;
     }

@@ -37,6 +37,7 @@ public class FeaturedFragment extends Fragment {
 
     TextView title_tv;
     ImageView featured_iv, left_iv, right_iv;
+    boolean isLoggedIn;
 
     public FeaturedFragment() {}
     public static FeaturedFragment newInstance(String param1, String param2) {
@@ -53,6 +54,7 @@ public class FeaturedFragment extends Fragment {
         //Required stuff for fragment creation
         final View rootView = inflater.inflate(R.layout.fragment_featured, container, false);
         int i = getArguments().getInt(ARG_NAV_NUMBER);
+        isLoggedIn = getArguments().getBoolean("isLoggedIn");
         String nav = getResources().getStringArray(R.array.nav_array)[i];
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());
@@ -114,9 +116,13 @@ public class FeaturedFragment extends Fragment {
         title_tv.setText(events[imageIndex]);
     }
     public void goToEvent(){
+        Fragment f = new ViewEventFragment();
+        Bundle args = new Bundle();
+        args.putBoolean("isLoggedIn", isLoggedIn);
+        f.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_frame, new ViewEventFragment());
+        ft.replace(R.id.content_frame, f);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.addToBackStack("confirmEvent");
         ft.commit();

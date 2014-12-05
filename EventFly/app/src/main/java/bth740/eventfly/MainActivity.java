@@ -201,6 +201,7 @@ public class MainActivity extends Activity {
 
         if (canChange) {
             args.putInt(NavFragment.ARG_NAV_NUMBER, position);
+            args.putBoolean("isLoggedIn", isLoggedIn);
             fragment.setArguments(args);
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
