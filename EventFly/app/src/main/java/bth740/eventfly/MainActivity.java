@@ -172,7 +172,14 @@ public class MainActivity extends Activity {
         switch (position) {
             case 0: fragment = new FeaturedFragment(); break;
             case 1: fragment = new EventlistFragment(); break;
-            case 2: fragment = new EnterFieldsFragment(); break;
+            case 2:
+                if (isLoggedIn) { fragment = new EnterFieldsFragment(); }
+                else {
+                    Toast.makeText(getBaseContext(), "Must log in to view this page", Toast.LENGTH_SHORT).show();
+                    fragment = new NavFragment();
+                    canChange = false;
+                }
+                break;
             case 3:
                 if (isLoggedIn){ fragment = new HistoryFragment();}
                 else {

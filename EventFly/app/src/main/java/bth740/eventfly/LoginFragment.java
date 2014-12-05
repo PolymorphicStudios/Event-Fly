@@ -65,7 +65,7 @@ public class LoginFragment extends Fragment {
                 pass = pass_et.getText().toString();
 
                 if((user.equals("Olivier") || user.equals("olivier")) &&  pass.equals("password")) {
-                    Toast.makeText(getActivity(), "Logging in...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Logged in!", Toast.LENGTH_SHORT).show();
                     MainActivity.isLoggedIn = true;
                     MainActivity.loginBtn.setText("Logout");
                     back();
