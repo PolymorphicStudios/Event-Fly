@@ -46,8 +46,11 @@ public class ViewEventFragment extends Fragment {
         //Required stuff for fragment creation
         View rootView = inflater.inflate(R.layout.fragment_view_event, container, false);
         String nav = getResources().getStringArray(R.array.nav_array)[0];
-        if(getArguments() != null)
+        boolean isHistory = false;
+        if(getArguments() != null) {
             isLoggedIn = getArguments().getBoolean("isLoggedIn");
+            isHistory = getArguments().getBoolean("history") || false;
+        }
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());
@@ -74,7 +77,7 @@ public class ViewEventFragment extends Fragment {
 
         going = (Spinner) rootView.findViewById(R.id.spinner);
 
-        if(!isLoggedIn) {
+        if(!isLoggedIn || isHistory) {
             reminderBtn.setVisibility(View.GONE);
             contactBtn.setVisibility(View.GONE);
             going.setVisibility(View.GONE);

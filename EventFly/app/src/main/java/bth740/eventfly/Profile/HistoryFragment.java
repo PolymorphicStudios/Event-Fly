@@ -52,7 +52,7 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_history, container, false);
-        String nav = getResources().getStringArray(R.array.nav_array)[2];
+        String nav = getResources().getStringArray(R.array.nav_array)[3];
 
         int imageId = getResources().getIdentifier(nav.toLowerCase(Locale.getDefault()),
                 "drawable", getActivity().getPackageName());
@@ -80,9 +80,13 @@ public class HistoryFragment extends Fragment {
     //----------------------------------------------------------------------------------------------
     //Methods
     public void goToEvent(){
+        Fragment f = new ViewEventFragment();
+        Bundle args = new Bundle();
+        args.putBoolean("history", true);
+        f.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_frame, new ViewEventFragment());
+        ft.replace(R.id.content_frame, f);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.addToBackStack("confirmEvent");
         ft.commit();
